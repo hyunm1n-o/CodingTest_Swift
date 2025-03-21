@@ -1,9 +1,9 @@
 import Foundation
 
 func solution(_ my_string:String, _ overwrite_string:String, _ s:Int) -> String {
-    var num = my_string.count - (s + overwrite_string.count)
-    var result = ""
+    let a = my_string.prefix(s)
+    let b = overwrite_string
+    let c = my_string.suffix(my_string.count - overwrite_string.count - s)
     
-    result += my_string.prefix(s) + overwrite_string + my_string.suffix(num)
-    return result
+    return a + b + c
 }
