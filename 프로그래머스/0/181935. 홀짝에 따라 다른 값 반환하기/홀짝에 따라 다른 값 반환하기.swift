@@ -2,19 +2,17 @@ import Foundation
 
 func solution(_ n:Int) -> Int {
     var result = 0
-    var temp = 0
-    
-    if n % 2 == 0 { // 짝수라면
-        for _ in 0..<n/2 {
-            temp += 2
-            result += temp*temp
+    if n % 2 == 0 { 
+        for i in 1...n {
+            if i % 2 == 0 {
+                result += i*i
+            }
         }
-    } else { // 홀수라면
-        temp = 1
-        result = 1
-        for _ in 0..<n/2 {
-            temp += 2
-            result += temp
+    } else { 
+        for i in 1...n {
+            if i % 2 != 0 {
+                result += i
+            }
         }
     }
     
