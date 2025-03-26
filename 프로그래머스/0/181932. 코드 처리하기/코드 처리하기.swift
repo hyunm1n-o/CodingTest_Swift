@@ -1,24 +1,23 @@
 import Foundation
 
 func solution(_ code:String) -> String {
-    var mode = false
-    let codeArr = code.map{$0}
-    var ret = ""
+    var mode: Bool = false
+    var ret: String = ""
     
-    for i in 0..<code.count {
+    for (index, code) in code.enumerated() {
         
-        if codeArr[i] == "1" {
+        if code == "1" {
             mode.toggle()
             continue
         } 
         
         if mode {
-            if i % 2 == 1 {
-                ret.append(String(codeArr[i]))
+            if index % 2 == 1 {
+                ret.append(code)
             }
         } else {
-            if i % 2 == 0 {
-                ret.append(String(codeArr[i]))
+            if index % 2 == 0 {
+                ret.append(code)
             }
         }
         
