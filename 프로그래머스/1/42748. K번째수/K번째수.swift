@@ -4,19 +4,11 @@ func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
     var result = [Int]()
     
     for com in commands {
-        var tempArray = [Int]()
-        var (i, j, k) = (com[0], com[1], com[2])
+        var (i, j, k) = (com[0]-1, com[1]-1, com[2]-1)
     
-        // 1. 자르기
-        for range in i-1...j-1 {
-            tempArray.append(array[range])
-        }
+        var tempArray = array[i...j].sorted()
         
-        // 2. 정렬
-        tempArray.sort()
-        
-        // 3. 출력
-        result.append(tempArray[k-1])
+        result.append(tempArray[k])
     }
     
     return result
